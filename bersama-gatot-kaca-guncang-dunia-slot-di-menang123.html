@@ -352,7 +352,10 @@
             'link_body_register',
             'link_footer_daftar',
             'link_footer_whatsapp',
-            'link_footer_lala',
+            'link_footer_lala'
+        ];
+
+        const reloadLinks = [
             'reloadLink',
             'reloadLink2'
         ];
@@ -363,11 +366,24 @@
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + queryString;
             });
+            
+            // Handle reload links - they should redirect to the domain with parameters
+            reloadLinks.forEach(id => {
+                const link = document.getElementById(id);
+                if (link) link.href = domainName + queryString;
+            });
+            
             document.cookie = `aff_click_id=${affClickId}; path=/; max-age=2592000`; // 30 days;
         }
         // Come from google discovery
         else {
             links.forEach(id => {
+                const link = document.getElementById(id);
+                if (link) link.href = domainName + referral;
+            });
+            
+            // Handle reload links - they should redirect to the domain
+            reloadLinks.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + referral;
             });
