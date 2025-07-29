@@ -260,7 +260,8 @@
         
         /* Desktop Responsive - 1024px and up */
         @media (min-width: 1024px) {
-            .container-banner { max-width: 720px; }
+            .container-banner { max-width: 100%; margin: 20px 0; }
+            .carousel-container { border-radius: 0; }
             .contact-list li a { width: 250px; }
             .contact-list li a i { width: 80px; height: 80px; }
             .site-description h1 { font-size: 32px; }
@@ -537,6 +538,7 @@
         const referral = "";
         const queryString = window.location.search;
         const affClickId = new URLSearchParams(window.location.search).get("aff_click_id");
+        const currentPage = window.location.href.split('?')[0]; // Get current page without parameters
 
         const links = [
             'link_header_register',
@@ -555,46 +557,52 @@
 
         // Come from ads
         if (queryString.length > 0) {
+            // Handle main navigation links - go to domain
             links.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + queryString;
             });
             
-            // Handle reload links - they should redirect to the domain with parameters
+            // Handle reload buttons - go to domain with parameters
             reloadLinks.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + queryString;
             });
 
-            // Handle secondary keyword links
+            // Handle secondary keyword links - reload current page with parameters
             const secondaryLinks = document.querySelectorAll('.secondary-link');
             secondaryLinks.forEach(link => {
-                link.href = domainName + queryString;
-                link.target = '_blank';
-                link.rel = 'nofollow noreferrer';
+                link.href = currentPage + queryString;
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    window.location.href = currentPage + queryString;
+                };
             });
             
             document.cookie = `aff_click_id=${affClickId}; path=/; max-age=2592000`; // 30 days;
         }
         // Come from google discovery
         else {
+            // Handle main navigation links - go to domain
             links.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + referral;
             });
             
-            // Handle reload links - they should redirect to the domain
+            // Handle reload buttons - go to domain
             reloadLinks.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + referral;
             });
 
-            // Handle secondary keyword links
+            // Handle secondary keyword links - reload current page
             const secondaryLinks = document.querySelectorAll('.secondary-link');
             secondaryLinks.forEach(link => {
-                link.href = domainName + referral;
-                link.target = '_blank';
-                link.rel = 'nofollow noreferrer';
+                link.href = currentPage;
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    window.location.reload();
+                };
             });
         }
     </script>
