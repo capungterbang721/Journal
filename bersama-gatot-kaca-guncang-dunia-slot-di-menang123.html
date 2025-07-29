@@ -46,13 +46,24 @@
         .logo-container { 
             display: flex; 
             flex-direction: column; 
-            align-items: center; 
+            align-items: flex-start; 
             gap: 15px; 
             padding: 15px 10px; 
             background: #1a1a1a; 
-            text-align: center;
         }
-        .header-right { display: flex; flex-direction: row; gap: 8px; width: 100%; max-width: 300px; justify-content: center; }
+        .logo { 
+            align-self: flex-start;
+            max-width: 200px;
+        }
+        .header-right { 
+            display: flex; 
+            flex-direction: row; 
+            gap: 8px; 
+            width: 100%; 
+            max-width: 300px; 
+            justify-content: center; 
+            align-self: center;
+        }
         .register-button, .login-button { 
             padding: 10px 15px; 
             text-decoration: none; 
@@ -227,13 +238,19 @@
             .logo-container { 
                 flex-direction: row; 
                 justify-content: space-between; 
+                align-items: center;
                 padding: 15px 30px; 
+            }
+            .logo { 
+                max-width: 250px;
+                align-self: flex-start;
             }
             .header-right { 
                 flex-direction: row; 
                 gap: 15px; 
                 width: auto; 
                 max-width: none;
+                align-self: center;
             }
             .register-button, .login-button { 
                 padding: 12px 20px; 
