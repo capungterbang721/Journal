@@ -39,40 +39,233 @@
     
     <!-- Custom CSS -->
     <style amp-custom>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #0f0f0f; color: #fff; }
-        .logo-container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #1a1a1a; }
-        .header-right { display: flex; gap: 10px; }
-        .register-button, .login-button { padding: 8px 16px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        /* Mobile First Design */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0 0 80px 0; background: #0f0f0f; color: #fff; }
+        
+        /* Logo and Header - Mobile First */
+        .logo-container { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 15px 10px; 
+            background: #1a1a1a; 
+            text-align: center;
+        }
+        .header-right { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 300px; }
+        .register-button, .login-button { 
+            padding: 12px 20px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-align: center;
+            font-size: 14px;
+        }
         .register-button { background: #ffd700; color: #000; }
         .login-button { background: #007bff; color: #fff; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .container-banner { margin: 20px 0; }
-        .carousel-container { border-radius: 10px; overflow: hidden; }
+        
+        /* Container and Banner - Mobile First */
+        .container { max-width: 100%; margin: 0 auto; padding: 0 15px; }
+        .container-banner { 
+            margin: 20px auto; 
+            max-width: 400px; 
+            display: flex; 
+            justify-content: center;
+        }
+        .carousel-container { 
+            border-radius: 15px; 
+            overflow: hidden; 
+            width: 100%;
+        }
+        
+        /* Footer Container */
         .footer-container { background: #1a1a1a; padding: 20px 0; }
-        .contact-list { list-style: none; display: flex; justify-content: center; gap: 20px; padding: 0; margin: 20px 0; }
-        .contact-list li a { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #fff; padding: 15px; background: #333; border-radius: 10px; transition: background 0.3s; }
+        
+        /* Contact List - Mobile First */
+        .contact-list { 
+            list-style: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 0; 
+            margin: 20px 0; 
+        }
+        .contact-list li a { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-decoration: none; 
+            color: #fff; 
+            padding: 15px 20px; 
+            background: #333; 
+            border-radius: 12px; 
+            transition: background 0.3s;
+            width: 280px;
+            max-width: 90vw;
+        }
         .contact-list li a:hover { background: #555; }
-        .content table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        .content table th, .content table td { border: 1px solid #333; padding: 12px; text-align: left; }
+        .contact-list li a i { width: 50px; height: 50px; margin-bottom: 8px; }
+        
+        /* Tables - Mobile First */
+        .content table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+            font-size: 14px;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
+        }
+        .content table th, .content table td { 
+            border: 1px solid #333; 
+            padding: 8px; 
+            text-align: left; 
+            display: table-cell;
+            white-space: normal;
+        }
         .content table th { background: #ffd700; color: #000; font-weight: bold; }
         .content table td { background: #2a2a2a; }
+        
+        /* Content Styling */
         .site-description { margin-top: 20px; }
-        .site-description h1 { color: #ffd700; text-align: center; margin-bottom: 20px; }
-        .site-description h2 { color: #ffd700; margin-top: 30px; }
+        .site-description h1 { 
+            color: #ffd700; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-size: 24px;
+            line-height: 1.3;
+        }
+        .site-description h2 { 
+            color: #ffd700; 
+            margin-top: 30px; 
+            font-size: 20px;
+        }
         .site-description ul, .site-description ol { margin: 15px 0; padding-left: 20px; }
-        .site-description li { margin: 8px 0; }
+        .site-description li { margin: 8px 0; line-height: 1.5; }
+        .site-description p { line-height: 1.6; margin: 15px 0; }
+        
+        /* Buttons - Mobile First */
         .text-center { text-align: center; }
-        .button-30 { display: inline-block; padding: 15px 30px; background: linear-gradient(45deg, #ffd700, #ffed4e); color: #000; text-decoration: none; font-weight: bold; border-radius: 25px; margin: 10px; transition: transform 0.3s; }
+        .button-30 { 
+            display: inline-block; 
+            padding: 15px 25px; 
+            background: linear-gradient(45deg, #ffd700, #ffed4e); 
+            color: #000; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 25px; 
+            margin: 15px 5px; 
+            transition: transform 0.3s;
+            font-size: 14px;
+            text-align: center;
+        }
         .button-30:hover { transform: scale(1.05); }
+        
+        /* Table Classes */
         .tbuah { width: 100%; }
         .tbuah th { background: #ffd700; color: #000; }
         .tbuah td { background: #2a2a2a; color: #fff; }
-        .copyleft { margin-top: 40px; padding: 20px; background: #1a1a1a; border-radius: 10px; text-align: center; }
-        .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: #1a1a1a; padding: 10px; z-index: 1000; }
-        .fixed-footer a { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #fff; font-size: 12px; }
+        
+        /* Footer Styling */
+        .copyleft { 
+            margin-top: 40px; 
+            padding: 20px 15px; 
+            background: #1a1a1a; 
+            border-radius: 10px; 
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Fixed Footer - Mobile First */
+        .fixed-footer { 
+            position: fixed; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            display: flex; 
+            justify-content: space-around; 
+            background: #1a1a1a; 
+            padding: 8px 5px; 
+            z-index: 1000;
+            border-top: 2px solid #333;
+        }
+        .fixed-footer a { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-decoration: none; 
+            color: #fff; 
+            font-size: 10px;
+            padding: 5px;
+            flex: 1;
+            text-align: center;
+        }
+        .fixed-footer amp-img { 
+            width: 40px !important; 
+            height: 40px !important; 
+            margin-bottom: 4px;
+        }
+        
+        /* Animation */
         .tada { animation: tada 2s infinite; }
-        @keyframes tada { 0% { transform: scale(1); } 10%, 20% { transform: scale(0.9) rotate(-3deg); } 30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); } 40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); } 100% { transform: scale(1) rotate(0); } }
-        @media (max-width: 768px) { .logo-container { flex-direction: column; gap: 10px; } .contact-list { flex-direction: column; } .header-right { flex-direction: column; gap: 5px; } }
+        @keyframes tada { 
+            0% { transform: scale(1); } 
+            10%, 20% { transform: scale(0.9) rotate(-3deg); } 
+            30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); } 
+            40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); } 
+            100% { transform: scale(1) rotate(0); } 
+        }
+        
+        /* Tablet Responsive - 768px and up */
+        @media (min-width: 768px) {
+            body { padding-bottom: 0; }
+            
+            .logo-container { 
+                flex-direction: row; 
+                justify-content: space-between; 
+                padding: 15px 30px; 
+            }
+            .header-right { 
+                flex-direction: row; 
+                gap: 15px; 
+                width: auto; 
+                max-width: none;
+            }
+            
+            .container { padding: 0 30px; max-width: 1200px; }
+            .container-banner { max-width: 600px; }
+            
+            .contact-list { 
+                flex-direction: row; 
+                justify-content: center; 
+                gap: 20px; 
+            }
+            .contact-list li a { width: 200px; }
+            .contact-list li a i { width: 60px; height: 60px; }
+            
+            .site-description h1 { font-size: 28px; }
+            .site-description h2 { font-size: 22px; }
+            
+            .content table { display: table; font-size: 16px; }
+            .content table th, .content table td { padding: 12px; }
+            
+            .button-30 { padding: 15px 30px; font-size: 16px; }
+            
+            .fixed-footer { position: relative; padding: 15px; }
+            .fixed-footer a { font-size: 14px; }
+            .fixed-footer amp-img { width: 60px !important; height: 60px !important; }
+        }
+        
+        /* Desktop Responsive - 1024px and up */
+        @media (min-width: 1024px) {
+            .container-banner { max-width: 720px; }
+            .contact-list li a { width: 250px; }
+            .contact-list li a i { width: 80px; height: 80px; }
+            .site-description h1 { font-size: 32px; }
+            .fixed-footer amp-img { width: 80px !important; height: 80px !important; }
+        }
     </style>
     
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -211,14 +404,14 @@
                             <p id="metadesc">Menang123 menghadirkan pengalaman bermain slot Gatot Kaca terbaik dengan RTP tinggi dan bonus menarik. Daftar sekarang di situs judi online terpercaya Menang123 dan raih kemenangan besar!</p>
                             
                             <h2>Keunggulan Slot Gatot Kaca di Menang123</h2>
-                            <p>Sebagai platform judi online terpercaya, <strong>Menang123</strong> menghadirkan pengalaman bermain slot Gatot Kaca dengan fitur-fitur unggulan:</p>
+                            <p>Sebagai platform judi online terpercaya, <strong>Menang123</strong> menghadirkan pengalaman bermain <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">slot Gatot Kaca</a> dengan fitur-fitur unggulan:</p>
                             
                             <ul>
-                                <li><strong>RTP Tinggi 97.8%</strong> - Peluang menang lebih besar hanya di Menang123</li>
-                                <li><strong>Bonus New Member 100%</strong> - Khusus pendaftar baru melalui link ini</li>
-                                <li><strong>Jackpot Progresif</strong> - Hadiah jutaan rupiah menanti di Menang123</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">RTP Tinggi 97.8%</a></strong> - Peluang menang lebih besar hanya di Menang123</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Bonus New Member 100%</a></strong> - Khusus pendaftar baru melalui link ini</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Jackpot Progresif</a></strong> - Hadiah jutaan rupiah menanti di Menang123</li>
                                 <li><strong>Grafik HD</strong> - Pengalaman visual terbaik hanya di Menang123</li>
-                                <li><strong>Support 24/7</strong> - Tim profesional Menang123 siap membantu</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Support 24/7</a></strong> - Tim profesional Menang123 siap membantu</li>
                             </ul>
                             
                             <div class="text-center" style="margin: 20px 0;">
@@ -227,11 +420,11 @@
                             
                             <h2>5 Kelebihan Menang123 Dibanding Situs Lain</h2>
                             <ol>
-                                <li><strong>Proses Cepat</strong> - Deposit & withdraw di Menang123 hanya 1 menit</li>
-                                <li><strong>Tanpa Potongan</strong> - Menang123 tidak memotong kemenangan member</li>
-                                <li><strong>Aplikasi Mobile</strong> - Akses Menang123 via smartphone lebih praktis</li>
-                                <li><strong>Event Rutin</strong> - Turnamen slot dengan hadiah besar setiap minggu</li>
-                                <li><strong>Lisensi Resmi</strong> - Menang123 beroperasi dengan izin PAGCOR</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Proses Cepat</a></strong> - Deposit & withdraw di Menang123 hanya 1 menit</li>
+                                <li><strong>Tanpa Potongan</strong> - <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Menang123</a> tidak memotong kemenangan member</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Aplikasi Mobile</a></strong> - Akses Menang123 via smartphone lebih praktis</li>
+                                <li><strong>Event Rutin</strong> - <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Turnamen slot</a> dengan hadiah besar setiap minggu</li>
+                                <li><strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Lisensi Resmi</a></strong> - Menang123 beroperasi dengan izin PAGCOR</li>
                             </ol>
                             
                             <h2>Testimoni Member Menang123</h2>
@@ -240,7 +433,7 @@
                                 <cite>- Andi K, Member VIP Menang123</cite>
                             </blockquote>
                             
-                            <h2>Panduan Bermain di Menang123</h2>
+                            <h2 id="panduan-bermain">Panduan Bermain di Menang123</h2>
                             <div class="content">
                                 <table class="tbuah">
                                     <thead>
@@ -251,7 +444,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1. Daftar Akun Menang123</td>
+                                            <td><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">1. Daftar Akun Menang123</a></td>
                                             <td>Isi formulir pendaftaran di halaman utama</td>
                                         </tr>
                                         <tr>
@@ -259,16 +452,16 @@
                                             <td>Proses cepat hanya 2 menit di Menang123</td>
                                         </tr>
                                         <tr>
-                                            <td>3. Lakukan Deposit</td>
+                                            <td><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">3. Lakukan Deposit</a></td>
                                             <td>Minimal Rp 10.000 via transfer bank atau e-wallet</td>
                                         </tr>
                                         <tr>
-                                            <td>4. Klaim Bonus</td>
-                                            <td>Dapatkan bonus new member 100% khusus di Menang123</td>
+                                            <td id="bonus-new-member">4. Klaim Bonus</td>
+                                            <td>Dapatkan <strong>bonus new member 100%</strong> khusus di Menang123</td>
                                         </tr>
                                         <tr>
                                             <td>5. Mainkan Gatot Kaca</td>
-                                            <td>Temukan game slot Gatot Kaca di lobi Menang123</td>
+                                            <td>Temukan game <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">slot Gatot Kaca</a> di lobi Menang123</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -309,11 +502,11 @@
                             </div>
                             
                             <p style="text-align: center; margin-top: 30px;">
-                                <strong>Jangan lewatkan kesempatan emas ini! Bergabunglah dengan ribuan member lainnya di Menang123 sekarang!</strong>
+                                <strong>Jangan lewatkan kesempatan emas ini! Bergabunglah dengan ribuan member lainnya di <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Menang123</a> sekarang!</strong>
                             </p>
                             
                             <div class="copyleft">
-                                <p>© 2024 <strong>Menang123</strong> - Situs Judi Slot Online Terbaik dan Terpercaya No.1 di Indonesia. All Rights Reserved.</p>
+                                <p>© 2024 <strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Menang123</a></strong> - Situs Judi <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Slot Online</a> Terbaik dan Terpercaya No.1 di Indonesia. All Rights Reserved.</p>
                                 <p>Menang123 merupakan merek dagang terdaftar dari PT. Digital Gaming Indonesia. Bermain dengan tanggung jawab.</p>
                             </div>
                         </article>
@@ -372,6 +565,14 @@
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + queryString;
             });
+
+            // Handle secondary keyword links
+            const secondaryLinks = document.querySelectorAll('.secondary-link');
+            secondaryLinks.forEach(link => {
+                link.href = domainName + queryString;
+                link.target = '_blank';
+                link.rel = 'nofollow noreferrer';
+            });
             
             document.cookie = `aff_click_id=${affClickId}; path=/; max-age=2592000`; // 30 days;
         }
@@ -386,6 +587,14 @@
             reloadLinks.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) link.href = domainName + referral;
+            });
+
+            // Handle secondary keyword links
+            const secondaryLinks = document.querySelectorAll('.secondary-link');
+            secondaryLinks.forEach(link => {
+                link.href = domainName + referral;
+                link.target = '_blank';
+                link.rel = 'nofollow noreferrer';
             });
         }
     </script>
