@@ -52,14 +52,16 @@
             background: #1a1a1a; 
             text-align: center;
         }
-        .header-right { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 300px; }
+        .header-right { display: flex; flex-direction: row; gap: 8px; width: 100%; max-width: 300px; justify-content: center; }
         .register-button, .login-button { 
-            padding: 12px 20px; 
+            padding: 10px 15px; 
             text-decoration: none; 
             border-radius: 8px; 
             font-weight: bold; 
             text-align: center;
-            font-size: 14px;
+            font-size: 12px;
+            flex: 1;
+            min-width: 120px;
         }
         .register-button { background: #ffd700; color: #000; }
         .login-button { background: #007bff; color: #fff; }
@@ -232,6 +234,12 @@
                 gap: 15px; 
                 width: auto; 
                 max-width: none;
+            }
+            .register-button, .login-button { 
+                padding: 12px 20px; 
+                font-size: 14px;
+                flex: none;
+                min-width: auto;
             }
             
             .container { padding: 0 30px; max-width: 1200px; }
@@ -449,19 +457,15 @@
                                             <td>Isi formulir pendaftaran di halaman utama</td>
                                         </tr>
                                         <tr>
-                                            <td>2. Verifikasi Data</td>
-                                            <td>Proses cepat hanya 2 menit di Menang123</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">3. Lakukan Deposit</a></td>
+                                            <td><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">2. Lakukan Deposit</a></td>
                                             <td>Minimal Rp 10.000 via transfer bank atau e-wallet</td>
                                         </tr>
                                         <tr>
-                                            <td id="bonus-new-member">4. Klaim Bonus</td>
+                                            <td id="bonus-new-member">3. Klaim Bonus</td>
                                             <td>Dapatkan <strong>bonus new member 100%</strong> khusus di Menang123</td>
                                         </tr>
                                         <tr>
-                                            <td>5. Mainkan Gatot Kaca</td>
+                                            <td>4. Mainkan Gatot Kaca</td>
                                             <td>Temukan game <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">slot Gatot Kaca</a> di lobi Menang123</td>
                                         </tr>
                                     </tbody>
@@ -507,7 +511,7 @@
                             </p>
                             
                             <div class="copyleft">
-                                <p>© 2024 <strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Menang123</a></strong> - Situs Judi <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Slot Online</a> Terbaik dan Terpercaya No.1 di Indonesia. All Rights Reserved.</p>
+                                <p>© 2025 <strong><a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Menang123</a></strong> - Situs Judi <a href="#" class="secondary-link" style="color: #ffd700; text-decoration: none;">Slot Online</a> Terbaik dan Terpercaya No.1 di Indonesia. All Rights Reserved.</p>
                                 <p>Menang123 merupakan merek dagang terdaftar dari PT. Digital Gaming Indonesia. Bermain dengan tanggung jawab.</p>
                             </div>
                         </article>
